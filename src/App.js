@@ -1,28 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import { Welcome } from './components/Welcome';
-import { AddKolon } from './components/AddKolon';
-import { EditKolon } from './components/EditKolon';
-import {GlobalProvider} from './context/GlobalState';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Welcome } from "./components/Welcome";
+import { AddTask } from "./components/AddTask";
+import { EditUser } from "./components/EditUser";
+import { GlobalProvider } from "./context/GlobalState";
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
-function App() {
+const App = () => {
   return (
-    <div>
+    <div style={{ maxWidth: "30rem", margin: "4rem auto" }}>
       <GlobalProvider>
-      <Router>
-      <Switch>
-          <Route exact path= "/" component={Welcome}/>
-          <AddKolon path="/addkolon" component={AddKolon} />
-          <EditKolon path="/edit/:id" component={EditKolon}/>
-      </Switch>
-      </Router>
+        <Router>
+          <Switch>
+            {/* <Route exact path="/" component={() => <Welcome tasks={tasks} setUsers={setUsers} />} /> */}
+            <Route exact path="/" component={Welcome} />
+            <Route path="/add" component={AddTask} />
+            <Route path="/edit/:id" component={EditUser} />
+          </Switch>
+        </Router>
       </GlobalProvider>
     </div>
-  );
+  )
 }
 
 export default App;

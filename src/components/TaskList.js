@@ -8,25 +8,22 @@ import {
 } from "reactstrap";
 
 export const TaskList = () => {
-  const { users, removeUser } = useContext(GlobalContext);
+  const { tasks, removeTask } = useContext(GlobalContext);
 
   return (
     <ListGroup className="mt-4">
-      {users.length > 0 ? (
         <>
-          {users.map(user => (
-            <ListGroupItem className="d-flex" key={user.id}>
-              <strong>{user.name}</strong>
+          {tasks.map(task => (
+            <ListGroupItem className="d-flex" key={task.id}>
+              <strong>{task.name}</strong>
               <div className="ml-auto">
-                <Link to={`/edit/${user.id}`} color="warning" className="btn btn-warning mr-1">Edit</Link>
-                <Button onClick={() => removeUser(user.id)} color="danger">Delete</Button>
+                <Link to={`/edit/${task.id}`} color="warning" className="btn btn-warning mr-1">Edit</Link>
+                <Button onClick={() => removeTask(task.id)} color="danger">Clear</Button>
               </div>
             </ListGroupItem>
           ))}
         </>
-      ) : (
-          <h4 className="text-center">No Users</h4>
-        )}
+          <h4 className="text-center">No Tasks Now</h4>
     </ListGroup>
   )
 }

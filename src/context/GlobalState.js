@@ -1,36 +1,50 @@
-import React, {createContext, useReducer} from'react';
-import AddReducer from './AddReducer';
+import React, { createContext, useReducer } from 'react';
+import AppReducer from './AppReducer';
 
-//Initial State 
+// Initial State
 const initialState = {
-    users: []
+  tasks: []
 }
 
-//Create Context
+// Create Context
 export const GlobalContext = createContext(initialState);
 
 // Provider Component
-export const GlobalProvider = ({children}) => {
+export const GlobalProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(AppReducer, initialState);
 
-    const [state, dispacth] = useReducer(AddReducer, initialState);
+  // Actions
+  const removeTask = (id) => {
+    dispatch({
+      type: 'REMOVE_TASK',
+      payload: id
+    })
+  }
 
-    //Actions
-    const removeTask = (id) => {
-        dispacth ({
-            type: 'REMOVE_TASK',
-            payload: id
-        })
-    }
+  const addUser = (task) => {
+    dispatch({
+      type: 'ADD_TASK',
+      payload: task
+    })
+  }
 
-    return (
-        <GlobalContext.Provider value ={{
-            users: state.users,
-            removeTask
-        }}>
-            {children}
-        </GlobalContext.Provider>
-    )
+  const editUser = (task) => {
+    dispatch({
+      type: 'EDIT_TASK',
+      payload: task
+    })
+  }
+
+  return (
+    <GlobalContext.Provider value={{
+      tasks: state.tasks,
+      removeTask,
+      addUser,
+      editUser
+    }}>
+      {children}
+    </GlobalContext.Provider>
+  )
 }
-    
 
 
