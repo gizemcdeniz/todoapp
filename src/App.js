@@ -1,15 +1,24 @@
 import React from 'react';
-import './App.css';
-import { BrowserRouter, Route} from 'react-router-dom';
-import Main from './Router' 
-import kolon from './kolon.css'
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { Welcome } from './components/Welcome';
+import { AddKolon } from './components/AddKolon';
+import { EditKolon } from './components/EditKolon';
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 
 function App() {
   return (
-     <BrowserRouter>
-     <Route component={Main}/>
-     </BrowserRouter>
+    <div>
+      <Router>
+      <Switch>
+          <Route exact path= "/" component={Welcome}/>
+          <AddKolon path="/addkolon" component={AddKolon} />
+          <EditKolon path="/edit/:id" component={EditKolon}/>
+      </Switch>
+      </Router>
+    </div>
   );
 }
 

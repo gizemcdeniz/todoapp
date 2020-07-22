@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
+import {Heading} from './Heading';
+import {TaskList} from './TaskList';
 
-export default class Welcome extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Hello World</h1>
-            </div>
-        );
-    }
+export const Welcome = () => {
+    return (
+        <div>
+            <Heading/>
+            <TaskList/>
+        </div>
+    )
 }
- 
