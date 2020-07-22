@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![To Do Demo](Desktop/todo.gif)
+<img src="./todo.gif" alt="demo">
 
 
 
