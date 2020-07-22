@@ -17,7 +17,7 @@ export const TaskList = () => {
         <>
           {tasks.map(task => (
             <ListGroupItem className="d-flex" key={task.id}>
-              <strong className="text-uppercase">{task.name}</strong>
+              <strong >{task.name}</strong>
               <div className="ml-auto">
                 <Link to={`/edit/${task.id}`} color="warning" className="btn btn-warning mr-1">Edit</Link>
                 <Button onClick={() => removeTask(task.id)} color="danger">Clear</Button>

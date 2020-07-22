@@ -18,7 +18,7 @@ export const Heading = () => {
         <Nav className="d-flex justify-content-center">
         <img src={logo} alt="logo"/>
           <NavItem>
-            <Link className="btn btn-primary mt-3" to="/add">Add Task</Link>
+            <Link className="btn btn-primary mt-3" to="/add">Add Task <i class="fa fa-plus" aria-hidden="true"></i></Link>
           </NavItem>
         </Nav>
       </Container>

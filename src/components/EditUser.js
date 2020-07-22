@@ -1,4 +1,3 @@
-  
 import React, { useState, useContext, useEffect } from 'react';
 import { GlobalContext } from "../context/GlobalState";
 import { Link, useHistory } from "react-router-dom";
@@ -11,7 +10,7 @@ import {
 } from "reactstrap";
 
 export const EditUser = (props) => {
-  const { editUser, tasks } = useContext(GlobalContext);
+  const { editTask, tasks } = useContext(GlobalContext);
   const [selectedUser, setSelectedUser] = useState({
     id: '',
     name: ''
@@ -31,7 +30,7 @@ export const EditUser = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    editUser(selectedUser);
+    editTask(selectedUser);
     history.push("/")
   }
 

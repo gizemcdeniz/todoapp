@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react';
 import { GlobalContext } from "../context/GlobalState";
 import { v4 as uuid } from "uuid";
 import { Link, useHistory } from "react-router-dom";
+import 'font-awesome/css/font-awesome.min.css';
 import {
   Form,
   FormGroup,
@@ -34,10 +35,10 @@ export const AddTask = () => {
     <Form onSubmit={onSubmit}>
       <FormGroup>
         <Label>Task Name</Label>
-        <Input type="text" className="text-uppercase" value={name} onChange={onChange} name="name" placeholder="Enter Task" required></Input>
+        <Input type="text" value={name} onChange={onChange} name="name" placeholder="Enter Task" required autocomplete="off"></Input>
       </FormGroup>
       <Button type="submit">Submit</Button>
-      <Link to="/" className="btn btn-danger ml-2">Clear</Link>
+      <Link to="/" className="btn btn-danger ml-2">Clear<i class="fa fa-trash" aria-hidden="true"></i></Link>
     </Form>
   )
 }

@@ -28,7 +28,7 @@ export const GlobalProvider = ({ children }) => {
     })
   }
 
-  const editUser = (task) => {
+  const editTask = (task) => {
     dispatch({
       type: 'EDIT_TASK',
       payload: task
@@ -40,7 +40,7 @@ export const GlobalProvider = ({ children }) => {
       tasks: state.tasks,
       removeTask,
       addUser,
-      editUser
+      editTask
     }}>
       {children}
     </GlobalContext.Provider>
