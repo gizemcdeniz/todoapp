@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { Welcome } from './components/Welcome';
 import { AddKolon } from './components/AddKolon';
 import { EditKolon } from './components/EditKolon';
+import {GlobalProvider} from './context/GlobalState';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -11,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
   return (
     <div>
+      <GlobalProvider>
       <Router>
       <Switch>
           <Route exact path= "/" component={Welcome}/>
@@ -18,6 +20,7 @@ function App() {
           <EditKolon path="/edit/:id" component={EditKolon}/>
       </Switch>
       </Router>
+      </GlobalProvider>
     </div>
   );
 }

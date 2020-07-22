@@ -1,29 +1,35 @@
-import React from 'react'
-import { Link} from "react-router-dom";
+import React, { useContext } from 'react';
+import { GlobalContext } from "../context/GlobalState";
+import { Link } from "react-router-dom";
 import {
-    ListGroup,
-    ListGroupItem,
-    Button
+  ListGroup,
+  ListGroupItem,
+  Button
+} from "reactstrap";
 
-} from 'reactstrap';
-    
 export const TaskList = () => {
-    return (
-        <ListGroup className="mt-4">
-            <ListGroupItem className="d-flex">
-                <strong>Task 1</strong>
-            <div className="ml-auto">
-            <Link className="btn btn-warning mr-1" to="/edit/1">Edit</Link>
-            <Button color="danger">Clear</Button>
-            </div>
+  const { users, removeUser } = useContext(GlobalContext);
+
+  return (
+    <ListGroup className="mt-4">
+      {users.length > 0 ? (
+        <>
+          {users.map(user => (
+            <ListGroupItem className="d-flex" key={user.id}>
+              <strong>{user.name}</strong>
+              <div className="ml-auto">
+                <Link to={`/edit/${user.id}`} color="warning" className="btn btn-warning mr-1">Edit</Link>
+                <Button onClick={() => removeUser(user.id)} color="danger">Delete</Button>
+              </div>
             </ListGroupItem>
-            <ListGroupItem className="d-flex">
-                <strong>Task 2</strong>
-            <div className="ml-auto">
-            <Link className="btn btn-warning mr-1" to="/edit/1">Edit</Link>
-            <Button color="danger">Clear</Button>
-            </div>
-            </ListGroupItem>
-        </ListGroup>
-    )
+          ))}
+        </>
+      ) : (
+          <h4 className="text-center">No Users</h4>
+        )}
+    </ListGroup>
+  )
 }
+
+//17. task.name => GlobalState.js üzerinden stateleri alıyor
+// 20. routing according to task id
