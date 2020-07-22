@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Welcome } from "./components/Welcome";
 import { AddTask } from "./components/AddTask";
-import { EditUser } from "./components/EditUser";
+import { EditTask } from "./components/EditTask";
 import { GlobalProvider } from "./context/GlobalState";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -16,7 +16,7 @@ const App = () => {
             {/* <Route exact path="/" component={() => <Welcome tasks={tasks} setUsers={setUsers} />} /> */}
             <Route exact path="/" component={Welcome} />
             <Route path="/add" component={AddTask} />
-            <Route path="/edit/:id" component={EditUser} />
+            <Route path="/edit/:id" component={EditTask} />
           </Switch>
         </Router>
       </GlobalProvider>

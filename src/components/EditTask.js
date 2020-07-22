@@ -9,7 +9,7 @@ import {
   Button
 } from "reactstrap";
 
-export const EditUser = (props) => {
+export const EditTask = (props) => {
   const { editTask, tasks } = useContext(GlobalContext);
   const [selectedUser, setSelectedUser] = useState({
     id: '',
