@@ -1,7 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![Demo Animation](../todo.gif?raw=true)
-
+[![Watch the video](https://todo.gif)](https://youtu.be/vt5fpE0bzSY)
 
 
 
