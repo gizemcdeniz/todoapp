@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from "../context/GlobalState";
 import { Link } from "react-router-dom";
+
+
 import {
   ListGroup,
   ListGroupItem,
@@ -15,7 +17,7 @@ export const TaskList = () => {
         <>
           {tasks.map(task => (
             <ListGroupItem className="d-flex" key={task.id}>
-              <strong>{task.name}</strong>
+              <strong className="text-uppercase">{task.name}</strong>
               <div className="ml-auto">
                 <Link to={`/edit/${task.id}`} color="warning" className="btn btn-warning mr-1">Edit</Link>
                 <Button onClick={() => removeTask(task.id)} color="danger">Clear</Button>
@@ -23,7 +25,10 @@ export const TaskList = () => {
             </ListGroupItem>
           ))}
         </>
-          <h4 className="text-center">No Tasks Now</h4>
+        {
+          tasks.length === 0 ?
+          <h4 className="text-center">No Tasks Now</h4> : ''
+        }
     </ListGroup>
   )
 }

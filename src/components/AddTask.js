@@ -34,7 +34,7 @@ export const AddTask = () => {
     <Form onSubmit={onSubmit}>
       <FormGroup>
         <Label>Task Name</Label>
-        <Input type="text" value={name} onChange={onChange} name="name" placeholder="Enter Task" required></Input>
+        <Input type="text" className="text-uppercase" value={name} onChange={onChange} name="name" placeholder="Enter Task" required></Input>
       </FormGroup>
       <Button type="submit">Submit</Button>
       <Link to="/" className="btn btn-danger ml-2">Clear</Link>

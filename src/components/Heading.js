@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import logo from './todo.png';
+
 import {
   Navbar,
   Nav,
@@ -10,12 +12,13 @@ import {
 
 export const Heading = () => {
   return (
-    <Navbar className="bg-warning">
-      <Container>
+    <Navbar className="bg-warning d-flex justify-content-center">
+      <Container className="d-flex justify-content-center">
         <NavbarBrand href="/">My Tasks</NavbarBrand>
-        <Nav>
+        <Nav className="d-flex justify-content-center">
+        <img src={logo} alt="logo"/>
           <NavItem>
-            <Link className="btn btn-primary" to="/add">Add Task</Link>
+            <Link className="btn btn-primary mt-3" to="/add">Add Task</Link>
           </NavItem>
         </Nav>
       </Container>
