@@ -1,7 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[![Watch the video](https://todo.gif)](https://youtu.be/vt5fpE0bzSY)
-
 
 
 ## Available Scripts
