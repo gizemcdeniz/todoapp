@@ -13,7 +13,6 @@ const App = () => {
       <GlobalProvider>
         <Router>
           <Switch>
-            {/* <Route exact path="/" component={() => <Welcome tasks={tasks} setUsers={setUsers} />} /> */}
             <Route exact path="/" component={Welcome} />
             <Route path="/add" component={AddTask} />
             <Route path="/edit/:id" component={EditTask} />
